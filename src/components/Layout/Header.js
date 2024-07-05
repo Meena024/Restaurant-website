@@ -1,18 +1,18 @@
 import React from "react";
-import "./Header.css";
+import HeaderCartButton from "./HeaderCartButton";
+import mealsImage from "../../assets/meals.jpg";
+import classes from "./Header.module.css";
 
 const Header = (props) => {
   return (
     <React.Fragment>
-      <header className="header">
-        <h1>
-          ReactMeals
-          <button>
-            Your Cart <span>0</span>
-          </button>
-        </h1>
+      <header className={classes.header}>
+        <h1>ReactMeals</h1>
+        <HeaderCartButton />
       </header>
-      <img src="https://raw.githubusercontent.com/academind/react-complete-guide-code/11-practice-food-order-app/extra-files/meals.jpg" alt="welcome food"></img>
+      <div className={classes["main-image"]}>
+        <img src={mealsImage} alt="welcome food"></img>
+      </div>
     </React.Fragment>
   );
 };
