@@ -9,9 +9,10 @@ const MealItemForm = (props) => {
 
   const addItemToCart = (event) => {
     event.preventDefault();
-    const amount = Number(amountInputRef.current.value);
-    const item = { ...props.item, qty: amount };
-    cartCtx.addItem(item);
+    const amount = amountInputRef.current.value;
+    const itemToAdd = { ...props.item, qty: Number(amount) };
+
+    cartCtx.addItem(itemToAdd);
   };
 
   return (
@@ -28,7 +29,7 @@ const MealItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button type="submit">+ Add</button>
+      <button>+ Add</button>
     </form>
   );
 };
